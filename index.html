@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vadim Freeman — frontend developer &amp; interaction designer</title>
+  <meta name="description" content="Vadim Freeman — frontend developer and interaction designer. Fast, tactile interfaces for the web." />
+  <meta name="theme-color" content="#0a0c12" />
+  <meta name="color-scheme" content="dark" />
+
+  <!-- Open Graph / social preview ------------------------------------------------->
+  <meta property="og:title" content="Vadim Freeman — frontend developer" />
+  <meta property="og:description" content="Fast, tactile interfaces for the web." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="vadim freeman" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/img/mark.svg" type="image/svg+xml" />
+
+  <!-- Fonts (swap for your own if you like) --------------------------------------->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Onest:wght@300;400;500;600&family=Unbounded:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Enables JS-only enhancements (scroll reveals). -->
+  <script>document.documentElement.classList.add("js");</script>
+  <noscript>
+    <style>
+      .loader, .cursor { display: none !important; }
+      body.is-locked { overflow: auto; }
+    </style>
+  </noscript>
+</head>
+<body class="is-locked">
+
+  <!-- ============================================================================
+       PRELOADER — правится в assets/js/main.js (секция "loader")
+       ============================================================================ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__panel loader__panel--top"></div>
+    <div class="loader__panel loader__panel--bottom"></div>
+    <div class="loader__inner">
+      <div class="loader__mark" data-mark></div>
+      <div class="loader__name"><span>VADIM</span><span>FREEMAN</span></div>
+      <div class="loader__bar"><i></i></div>
+      <span class="loader__count">0%</span>
+    </div>
+  </div>
+
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <div class="noise" aria-hidden="true"></div>
+  <div class="fog" aria-hidden="true"><div class="fog__cloud fog__cloud--a"></div><div class="fog__cloud fog__cloud--b"></div></div>
+
+  <!-- ============================================================================
+       HEADER — логотип и меню
+       ============================================================================ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Vadim Freeman — home">
+        <span class="brand__mark" data-mark></span>
+        <span class="brand__name">vadim</span>
+      </a>
+
+      <nav class="nav__side" aria-label="Main navigation">
+        <span class="status"><i></i> open for work</span>
+        <a class="nav__link" href="#work">work</a>
+        <a class="nav__link" href="#about">about</a>
+        <a class="nav__link" href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================================
+       HERO
+       ============================================================================ -->
+  <main class="home" id="top">
+    <section class="container hero">
+      <div class="hero__copy">
+        <p class="eyebrow"><span></span>independent developer — 2026</p>
+
+        <h1 class="display">
+          vadim.<br />
+          <em class="display__accent">freeman.</em>
+        </h1>
+
+        <p class="copy">
+          <span>Frontend developer &amp; interaction designer.</span>
+          <span>I build fast, tactile interfaces for the web.</span>
+        </p>
+
+        <div class="hero__meta">
+          <span>frontend / creative dev</span>
+          <span>react / motion / webgl</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn--primary" href="#work">
+            view work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#contact">get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="orb">
+          <div class="orb__ring orb__ring--outer"></div>
+          <div class="orb__ring orb__ring--inner"></div>
+          <canvas id="orbCanvas"></canvas>
+          <div class="orb__core" data-mark></div>
+          <span class="orb__glow"></span>
+        </div>
+        <span class="orb__caption">signal / 001</span>
+        <span class="chip chip--a">typescript</span>
+        <span class="chip chip--b">motion</span>
+        <span class="chip chip--c">ui engineering</span>
+      </div>
+    </section>
+
+    <!-- Бегущая строка: список слов меняется прямо в разметке -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>FRONTEND</span><span class="sep">/</span>
+        <span>REACT</span><span class="sep">/</span>
+        <span>TYPESCRIPT</span><span class="sep">/</span>
+        <span>MOTION</span><span class="sep">/</span>
+        <span>WEBGL</span><span class="sep">/</span>
+        <span>DESIGN SYSTEMS</span><span class="sep">/</span>
+        <span>2026</span><span class="sep">/</span>
+        <span>FRONTEND</span><span class="sep">/</span>
+        <span>REACT</span><span class="sep">/</span>
+        <span>TYPESCRIPT</span><span class="sep">/</span>
+        <span>MOTION</span><span class="sep">/</span>
+        <span>WEBGL</span><span class="sep">/</span>
+        <span>DESIGN SYSTEMS</span><span class="sep">/</span>
+        <span>2026</span><span class="sep">/</span>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         TABS: about / stack / links
+         ========================================================================== -->
+    <section class="container section tabs-section" data-reveal>
+      <div class="tabs" role="tablist" aria-label="Sections">
+        <button class="tab" type="button" role="tab" id="tab-about" aria-selected="true" aria-controls="panel-about" tabindex="0" data-tab="about">about</button>
+        <button class="tab" type="button" role="tab" id="tab-stack" aria-selected="false" aria-controls="panel-stack" tabindex="-1" data-tab="stack">stack</button>
+        <button class="tab" type="button" role="tab" id="tab-links" aria-selected="false" aria-controls="panel-links" tabindex="-1" data-tab="links">links</button>
+        <span class="tabs__indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="panels">
+        <div class="panel is-active" role="tabpanel" id="panel-about" aria-labelledby="tab-about" tabindex="0">
+          <div class="panel__grid">
+            <div>
+              <p class="eyebrow"><span></span>01 / about</p>
+              <h2>code with <em>a point of view.</em></h2>
+              <p>
+                I'm Vadim — a frontend developer who cares as much about the feel of an interface as the code behind it.
+                I work with React, TypeScript and a healthy amount of motion to make products that are quick,
+                readable and a little bit alive.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="mono">currently</span>
+              <h3>building for the web</h3>
+              <p>Open to freelance projects, product work and long-term collaborations.</p>
+              <a class="btn btn--primary" href="#contact">
+                say hello
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-stack" aria-labelledby="tab-stack" tabindex="0" hidden>
+          <p class="eyebrow"><span></span>02 / stack</p>
+          <h2>tools I <em>actually use.</em></h2>
+          <ul class="tags tags--large">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li>
+            <li>React</li><li>Next.js</li><li>Vite</li><li>Node.js</li>
+            <li>GSAP</li><li>Framer Motion</li><li>Three.js</li><li>Canvas</li>
+            <li>Figma</li><li>Git</li><li>Tailwind</li><li>Accessibility</li>
+          </ul>
+          <p class="panel__note">Not a checklist — just the tools that end up in most of my work.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-links" aria-labelledby="tab-links" tabindex="0" hidden>
+          <p class="eyebrow"><span></span>03 / links</p>
+          <h2>find me <em>elsewhere.</em></h2>
+          <div class="link-list">
+            <a class="link-row" href="https://github.com/VadimFreeman" target="_blank" rel="noopener noreferrer">
+              <span class="link-row__index">01</span>
+              <span class="link-row__name">GitHub</span>
+              <span class="link-row__handle">github.com/VadimFreeman</span>
+              <span class="link-row__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="link-row" href="https://t.me/" target="_blank" rel="noopener noreferrer">
+              <span class="link-row__index">02</span>
+              <span class="link-row__name">Telegram</span>
+              <span class="link-row__handle">@your_handle</span>
+              <span class="link-row__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="link-row" href="https://x.com/" target="_blank" rel="noopener noreferrer">
+              <span class="link-row__index">03</span>
+              <span class="link-row__name">X / Twitter</span>
+              <span class="link-row__handle">@your_handle</span>
+              <span class="link-row__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="link-row" href="mailto:hello@vadimfreeman.com">
+              <span class="link-row__index">04</span>
+              <span class="link-row__name">Email</span>
+              <span class="link-row__handle">hello@vadimfreeman.com</span>
+              <span class="link-row__arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WORK — карточки/строки проектов. Меняйте название, тип, год и ссылку.
+         ========================================================================== -->
+    <section class="container section" id="work" data-reveal>
+      <div class="section__head">
+        <p class="eyebrow"><span></span>selected work</p>
+        <h2 class="section__title">things I've <em>shipped.</em></h2>
+        <p class="section__note">A few projects that show how I think. Replace these with your own case studies.</p>
+      </div>
+
+      <div class="work-list">
+        <a class="work-row" href="#" data-cursor>
+          <span class="work-row__index">01</span>
+          <span class="work-row__main">
+            <span class="work-row__name">Atlas Dashboard</span>
+            <span class="work-row__desc">Analytics platform — design system, charts, dark mode.</span>
+          </span>
+          <span class="work-row__cat">product / frontend</span>
+          <span class="work-row__year">2026</span>
+          <span class="work-row__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="work-row" href="#" data-cursor>
+          <span class="work-row__index">02</span>
+          <span class="work-row__main">
+            <span class="work-row__name">Nocturne</span>
+            <span class="work-row__desc">Editorial portfolio with WebGL transitions and custom type.</span>
+          </span>
+          <span class="work-row__cat">creative / webgl</span>
+          <span class="work-row__year">2025</span>
+          <span class="work-row__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="work-row" href="#" data-cursor>
+          <span class="work-row__index">03</span>
+          <span class="work-row__main">
+            <span class="work-row__name">Pulse</span>
+            <span class="work-row__desc">Realtime collaboration tool — React, WebSockets, offline-first.</span>
+          </span>
+          <span class="work-row__cat">product / react</span>
+          <span class="work-row__year">2025</span>
+          <span class="work-row__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="work-row" href="#" data-cursor>
+          <span class="work-row__index">04</span>
+          <span class="work-row__main">
+            <span class="work-row__name">Field Notes</span>
+            <span class="work-row__desc">Small writing app with a focus on typography and speed.</span>
+          </span>
+          <span class="work-row__cat">side project</span>
+          <span class="work-row__year">2024</span>
+          <span class="work-row__arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT + PROFILE CARD
+         ========================================================================== -->
+    <section class="container section about" id="about" data-reveal>
+      <div class="about__copy">
+        <p class="eyebrow"><span></span>profile</p>
+        <h2 class="section__title">a developer with <em>taste.</em></h2>
+        <p class="lead">
+          I like interfaces that feel obvious in hindsight — no noise, no useless animation,
+          just the right amount of personality.
+        </p>
+        <p>
+          I've spent the last few years building product interfaces, marketing sites and design systems.
+          My favourite work sits where engineering meets design: performance budgets, motion,
+          typography, accessibility, all of it.
+        </p>
+        <p>
+          When I'm not coding, I'm probably collecting typefaces, breaking my own layouts,
+          or explaining why the spacing is off by two pixels.
+        </p>
+
+        <dl class="facts">
+          <div><dt>based in</dt><dd>remote / GMT+3</dd></div>
+          <div><dt>focus</dt><dd>frontend &amp; motion</dd></div>
+          <div><dt>status</dt><dd>open for work</dd></div>
+        </dl>
+      </div>
+
+      <aside class="profile-card">
+        <div class="profile-card__banner">
+          <span class="profile-card__grid" aria-hidden="true"></span>
+          <span class="profile-card__mono">vadim freeman / 2026</span>
+        </div>
+
+        <div class="profile-card__avatar">VF</div>
+
+        <div class="profile-card__body">
+          <span class="mono">frontend developer</span>
+          <h3>Vadim Freeman</h3>
+          <p class="profile-card__handle">@vadimfreeman</p>
+          <p class="profile-card__tagline">Building fast, tactile interfaces — with a soft spot for good typography.</p>
+
+          <div class="profile-card__links">
+            <a class="mini-btn" href="https://github.com/VadimFreeman" target="_blank" rel="noopener noreferrer">github ↗</a>
+            <a class="mini-btn" href="https://t.me/" target="_blank" rel="noopener noreferrer">telegram ↗</a>
+            <a class="mini-btn" href="mailto:hello@vadimfreeman.com">email ↗</a>
+          </div>
+        </div>
+
+        <div class="profile-card__foot">
+          <span class="status"><i></i> available</span>
+          <span class="mono">local <span id="localTime">--:--</span></span>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT
+         ========================================================================== -->
+    <section class="container section contact" id="contact" data-reveal>
+      <p class="eyebrow"><span></span>contact</p>
+      <h2 class="contact__title">
+        let's build<br />
+        <em class="display__accent">something good.</em>
+      </h2>
+      <p class="copy">
+        <span>Have a project, a role or an idea worth arguing about?</span>
+        <span>My inbox is open.</span>
+      </p>
+
+      <div class="contact__actions">
+        <a class="btn btn--primary" href="mailto:hello@vadimfreeman.com">
+          hello@vadimfreeman.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <button class="btn btn--ghost" type="button" id="copyEmail" data-email="hello@vadimfreeman.com">copy address</button>
+      </div>
+
+      <div class="contact__meta">
+        <span>github / VadimFreeman</span>
+        <span>telegram / @your_handle</span>
+        <span>GMT+3</span>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="container footer">
+      <span>vadim freeman</span>
+      <span>frontend / design / motion</span>
+      <span>© 2026</span>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

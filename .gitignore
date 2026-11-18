@@ -1,0 +1,9 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# dependencies (not used by the site, but handy if you add tooling)
+node_modules/
